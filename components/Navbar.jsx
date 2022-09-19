@@ -91,6 +91,12 @@ const Navbar = () => {
                                     Sign Up
                                 </span>
                             </li>
+
+                            <li className={styles.li}>
+                                <span style={{textDecoration: "underline"}}>
+                                    ADJUST PAGE'S ZOOM
+                                </span>
+                            </li>
                         </>
                     ) : (
                         <>
