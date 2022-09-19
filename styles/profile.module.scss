@@ -1,0 +1,194 @@
+@font-face {
+  font-family: introScript;
+  src:url(../public/font/intro-script-demo-medium.otf);
+}
+@font-face {
+  font-family: standard;
+  src:url(../public/font/HKGrotesk-Bold.otf);
+}
+@font-face {
+  font-family: alegreya;
+  src:url(../public/font/alegreyasans-black.ttf);
+}
+
+.main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: standard, serif;
+
+  .select {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 31.5%;
+
+    .msTitle {
+      transform: translate3d(8px, 0, 0);
+      font-size: 30px;
+    }
+  }
+
+  .noMission {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .nmText {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .arrow {
+      color: black;
+      display: flex;
+      height: 50px;
+      width: 50px;
+      transform: translate3d(20px, -5px, 0);
+      transition: 0.3s;
+    }
+
+    &:hover .arrow {
+      transform: translate3d(30px, -5px, 0);
+      color: #24985a;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .profile {
+    position: absolute;
+    top: 90px;
+    left: 450px;
+    display: flex;
+    width: calc(100% - 460px);
+    height: calc(100% - 96px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 2px solid black;
+    z-index: -2;
+
+    .header {
+      display: flex;
+      width: 100%;
+      height: 150px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      .pdp {
+        position: absolute;
+        display: flex;
+        margin-left: 10px;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        border: 2px solid black;
+        background-color: white;
+        z-index: 10;
+        transition: 0.3s;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .addPdp {
+          display: flex;
+          height: 20px;
+          width: 20px;
+          transition: 0.3s;
+
+          &:hover {
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            color: #24985a;
+          }
+        }
+      }
+
+      .banner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-bottom: 2px solid black;
+        background: rgb(6,82,19);
+        background: linear-gradient(143deg, rgba(6,82,19,1) 0%, rgba(36,152,90,1) 68%);
+        border-top-right-radius: 19px;
+        border-top-left-radius: 19px;
+        z-index: 9;
+        transition: 0.3s;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        .addBanner {
+          display: flex;
+          height: 20px;
+          width: 20px;
+          color: black;
+          transform: translate3d(-15px, 15px, 0);
+          transition: 0.3s;
+
+          &:hover {
+            cursor: pointer;
+            color: #4d4d4d;
+            transform: translate3d(-20px, 20px, 0);
+          }
+        }
+
+        .userInfo {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          position: absolute;
+          top: 45px;
+          left: 145px;
+          gap: 20px;
+
+          .username {
+            font-size: 45px;
+            color: white;
+          }
+
+          .points {
+            font-size: 25px;
+            color: #c7c6c6;
+            transform: translate3d(0, 1px, 0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 90;
+}
+

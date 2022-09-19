@@ -1,5 +1,199 @@
-.main {
-  background-color: red;
-  height: 100px;
-  width: 100px;
+@font-face {
+  font-family: introScript;
+  src:url(../public/font/intro-script-demo-medium.otf);
 }
+@font-face {
+  font-family: standard;
+  src:url(../public/font/HKGrotesk-Bold.otf);
+}
+@font-face {
+  font-family: alegreya;
+  src:url(../public/font/alegreyasans-black.ttf);
+}
+
+.navbar {
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  user-select: none;
+  overflow: hidden;
+
+  .title {
+    font-family: introScript, serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    .image {
+      transform: rotate(20deg);
+    }
+  }
+
+  .ul {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    margin-right: 20px;
+    list-style-type: none;
+
+    .li {
+      font-family: standard, serif;
+      font-size: 20px;
+
+      .element {
+        transition: 0.3s;
+
+        .pen {
+          transform: translate3d(-5px, 3px, 0);
+          transition: 0.3s ease-out;
+        }
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: line-through;
+        }
+
+        &:hover .pen {
+          transform: translate3d(-5px, 3px, 0) rotate(315deg);
+        }
+      }
+
+      .username {
+        padding: 8px 15px;
+        box-shadow: 0 0 8px #7e7e7e;
+        border-radius: 20px;
+        height: 200px;
+        z-index: 100;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: 0 0 8px #24985a;
+          cursor: pointer;
+        }
+
+        .walletStatus {
+          color: #7e7e7e;
+          font-size: 15px;
+        }
+      }
+
+      .login {
+        padding: 10px 25px;
+        border: 2px solid black;
+        border-radius: 40px;
+
+        &:hover {
+          background-color: #d5d5d5;
+          cursor: pointer;
+        }
+      }
+
+      .signup {
+        padding: 10px 15px;
+        border: 2px solid black;
+        border-radius: 40px;
+        background-color: #24985a;
+        color: #ffffff;
+
+        &:hover {
+          background-color: #1d7948;
+          cursor: pointer;
+        }
+      }
+
+
+    }
+  }
+}
+
+.profileHover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 63px;
+  bottom:0;
+  left: 87%;
+  right: 0;
+  box-shadow: 0 0 8px #7e7e7e;
+  border-radius: 20px;
+  height: 70px;
+  width: 149px;
+  font-family: standard, serif;
+  transition: 0.5s;
+  background-color: white;
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .logoutLogo {
+      color: red;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .profileText {
+      color: black;
+    }
+
+    .profileLogo {
+      color: black;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .logoutText {
+      color: red;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .logoutLogo {
+      transform: translate3d(3px, 0, 0);
+    }
+
+    &:hover .profileLogo {
+      transform: translate3d(3px, 0, 0);
+    }
+  }
+  &:hover{
+    box-shadow: 0 0 8px #24985a;
+  }
+}
+
+.dark {
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 90;
+}
+

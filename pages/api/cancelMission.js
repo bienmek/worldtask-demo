@@ -5,7 +5,7 @@ import Mission from "../../database/Schemas/Mission";
 import User from "../../database/Schemas/User";
 dotenv.config()
 
-export default async function deleteMission (req, res) {
+export default async function cancelMission (req, res) {
     const token = req.query.token
     const missionId = req.query.missionId
     const user = jwt.verify(token, process.env.JWT_SECRET)
@@ -19,6 +19,12 @@ export default async function deleteMission (req, res) {
         const dbMission = await Mission.findOne({_id: missionId})
 
         if (dbMission && dbUser) {
+
+            await Mission.updateOne(
+                {_id: missionId},
+                {$set: {missionReport: null}}
+            )
+
             await Mission.updateOne(
                 {_id: missionId},
                 {$set: {isAvailable: true}}
@@ -28,11 +34,17 @@ export default async function deleteMission (req, res) {
                 {_id: missionId},
                 {$set: {chooser: ""}}
             )
-            
+
+            await Mission.updateOne(
+                {_id: missionId},
+                {$set: {timeout: ""}}
+            )
+
             await User.updateOne(
                 {username},
                 {$set: {missionSelected: ""}}
             )
+
             res.status(200).json({message: "mission deleted"})
         } else {
             res.status(500).json({error: "mission or user not found"})

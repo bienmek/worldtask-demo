@@ -1,0 +1,47 @@
+@font-face {
+  font-family: introScript;
+  src:url(../public/font/intro-script-demo-medium.otf);
+}
+@font-face {
+  font-family: standard;
+  src:url(../public/font/HKGrotesk-Bold.otf);
+}
+@font-face {
+  font-family: alegreya;
+  src:url(../public/font/alegreyasans-black.ttf);
+}
+
+.addArea {
+  position: relative;
+  margin-top: 3px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+
+
+  .image {
+    position: absolute;
+    border-radius: 17px;
+  }
+
+
+  .plusVert {
+    position: absolute;
+    height: 20px;
+    width: 5px;
+    background-color: black;
+  }
+
+  .plusHori {
+    position: absolute;
+    height: 5px;
+    width: 20px;
+    background-color: black;
+  }
+}
